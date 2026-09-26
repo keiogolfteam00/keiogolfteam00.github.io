@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Annual schedule",
+  "description": "年間試合日程・行事一覧。月ごとに events を編集してください。試合がない月は空の配列 [] にします。",
+  "type": "object",
+  "required": ["schedule"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "schedule": {
+      "type": "array",
+      "description": "12ヶ月分のスケジュール。順番に表示されます。",
+      "items": {
+        "type": "object",
+        "required": ["month", "events"],
+        "additionalProperties": false,
+        "properties": {
+          "month": { "type": "string", "description": "月の表記（例：4月）。" },
+          "events": {
+            "type": "array",
+            "description": "その月の行事名の一覧。試合がなければ [] のままにしてください。",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

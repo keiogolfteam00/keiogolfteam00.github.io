@@ -1,0 +1,495 @@
+/* =============================================================================
+   Components — DADS 基本デザインのトークン上で組み立てた各パーツ
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+   本文ブロック
+   -------------------------------------------------------------------------- */
+.prose {
+  color: var(--color-neutral-solid-gray-900);
+  margin: 0;
+  max-width: 44rem;
+}
+
+.prose p {
+  margin: 0 0 var(--space-4);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 var(--space-4);
+  padding-left: 1.5em;
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+/* -----------------------------------------------------------------------------
+   通知バナー（DADS「Notification Banner」）
+   3pxの枠線と角丸12px、種別ごとに色を変える。
+   -------------------------------------------------------------------------- */
+.banner {
+  border: 0.1875rem solid currentColor;
+  border-radius: var(--border-radius-12);
+  display: grid;
+  gap: var(--space-3) var(--space-4);
+  grid-template-columns: 1.5rem 1fr;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+@media (min-width: 48em) {
+  .banner {
+    gap: var(--space-4) var(--space-6);
+    grid-template-columns: 2.25rem 1fr;
+    padding: var(--space-6) var(--space-6) var(--space-8);
+  }
+}
+
+.banner--info {
+  color: var(--color-key-900);
+}
+
+.banner--neutral {
+  color: var(--color-neutral-solid-gray-536);
+}
+
+.banner--warning {
+  color: var(--color-semantic-warning-yellow-2);
+}
+
+.banner-icon {
+  grid-column: 1;
+  grid-row: 1;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .banner-icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+}
+
+.banner-title {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-17);
+  font-weight: var(--font-weight-700);
+  grid-column: 2;
+  grid-row: 1;
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-170);
+  margin: 0;
+}
+
+@media (min-width: 48em) {
+  .banner-title {
+    font-size: var(--font-size-20);
+    line-height: var(--line-height-150);
+  }
+}
+
+.banner-body {
+  color: var(--color-neutral-solid-gray-900);
+  grid-column: 2;
+}
+
+.banner-body > :first-child {
+  margin-top: 0;
+}
+
+.banner-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   カード
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-solid-gray-420);
+  border-radius: var(--border-radius-8);
+  padding: var(--space-5);
+}
+
+@media (min-width: 48em) {
+  .card {
+    padding: var(--space-6);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   定義リスト（説明会情報など）
+   -------------------------------------------------------------------------- */
+.definition-list {
+  display: grid;
+  margin: 0;
+}
+
+.definition-list > div {
+  border-top: 1px solid var(--color-neutral-solid-gray-200);
+  display: grid;
+  gap: 0 var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.definition-list > div:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.definition-list > div:last-child {
+  padding-bottom: 0;
+}
+
+@media (min-width: 48em) {
+  .definition-list > div {
+    grid-template-columns: 12rem 1fr;
+  }
+}
+
+.definition-list dt {
+  color: var(--color-neutral-solid-gray-700);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  margin: 0;
+}
+
+.definition-list dd {
+  color: var(--color-neutral-solid-gray-900);
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   テーブル（年間スケジュール）
+   -------------------------------------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  border-collapse: collapse;
+  min-width: 22rem;
+  width: 100%;
+}
+
+.data-table caption {
+  color: var(--color-neutral-solid-gray-700);
+  margin-bottom: var(--space-3);
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  border-bottom: 1px solid var(--color-neutral-solid-gray-420);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table thead th {
+  background-color: var(--color-neutral-solid-gray-50);
+  border-bottom: 0.1875rem solid var(--color-key-900);
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.data-table tbody th {
+  color: var(--color-key-900);
+  font-weight: var(--font-weight-700);
+  white-space: nowrap;
+  width: 6rem;
+}
+
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* -----------------------------------------------------------------------------
+   部員紹介
+   -------------------------------------------------------------------------- */
+.year-group + .year-group {
+  margin-top: var(--space-12);
+}
+
+.gender-group + .gender-group {
+  margin-top: var(--space-8);
+}
+
+.gender-heading {
+  color: var(--color-neutral-solid-gray-700);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-4);
+}
+
+.members-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 48em) {
+  .members-grid {
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  }
+}
+
+.member-card {
+  align-items: center;
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-solid-gray-420);
+  border-radius: var(--border-radius-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+}
+
+.member-photo-wrap {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .member-photo-wrap {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.member-photo {
+  border-radius: var(--border-radius-full);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.member-photo-placeholder {
+  align-items: center;
+  background-color: var(--color-key-50);
+  border: 1px solid var(--color-neutral-solid-gray-200);
+  border-radius: var(--border-radius-full);
+  color: var(--color-key-700);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.member-photo-placeholder svg {
+  height: 60%;
+  width: 60%;
+}
+
+/* バッジの有無で氏名の縦位置がずれないよう、高さを確保したスロットに入れる */
+.member-role-slot {
+  align-items: center;
+  display: flex;
+  min-height: 1.5rem;
+}
+
+.member-role {
+  background-color: var(--color-key-900);
+  border-radius: var(--border-radius-4);
+  color: var(--color-neutral-white);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0;
+  line-height: var(--line-height-100);
+  padding: var(--space-1) var(--space-2);
+}
+
+.member-name {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0;
+  line-height: var(--line-height-130);
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   SNSリンクカード
+   -------------------------------------------------------------------------- */
+.social-links {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 48em) {
+  .social-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.social-link-card {
+  align-items: center;
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-solid-gray-420);
+  border-radius: var(--border-radius-8);
+  display: flex;
+  gap: var(--space-4);
+  min-height: var(--min-touch-target);
+  padding: var(--space-4);
+  text-decoration: none;
+}
+
+.social-link-card:hover {
+  background-color: var(--color-key-50);
+  border-color: var(--color-key-900);
+}
+
+.social-link-card:active {
+  background-color: var(--color-key-100);
+}
+
+.social-link-icon {
+  align-items: center;
+  background-color: var(--color-key-900);
+  border-radius: var(--border-radius-8);
+  color: var(--color-neutral-white);
+  display: flex;
+  flex-shrink: 0;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.social-link-icon svg {
+  fill: currentColor;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.social-link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.social-link-label {
+  color: var(--color-key-800);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-130);
+  text-decoration: underline;
+  text-underline-offset: 0.1875rem;
+}
+
+.social-link-card:hover .social-link-label {
+  color: var(--color-key-900);
+  text-decoration-thickness: 0.1875rem;
+}
+
+.social-link-handle {
+  color: var(--color-neutral-solid-gray-536);
+  font-size: var(--font-size-14);
+  letter-spacing: 0;
+  line-height: var(--line-height-130);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.social-link-arrow {
+  color: var(--color-neutral-solid-gray-536);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* -----------------------------------------------------------------------------
+   入部までの流れ（順序付きステップ）
+   -------------------------------------------------------------------------- */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.steps > li {
+  border-left: 2px solid var(--color-neutral-solid-gray-420);
+  counter-increment: step;
+  padding: 0 0 var(--space-8) var(--space-6);
+  position: relative;
+}
+
+.steps > li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.steps > li::before {
+  align-items: center;
+  background-color: var(--color-key-900);
+  border-radius: var(--border-radius-full);
+  color: var(--color-neutral-white);
+  content: counter(step);
+  display: flex;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-700);
+  height: 1.75rem;
+  justify-content: center;
+  left: -0.875rem;
+  line-height: var(--line-height-100);
+  position: absolute;
+  top: 0;
+  width: 1.75rem;
+}
+
+.step-label {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-160);
+  margin: 0 0 var(--space-1);
+}
+
+.step-date {
+  color: var(--color-neutral-solid-gray-900);
+  margin: 0;
+}
+
+.step-note {
+  color: var(--color-neutral-solid-gray-536);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-160);
+  margin: var(--space-1) 0 0;
+}
+
+/* -----------------------------------------------------------------------------
+   グリッド項目をリストとしてマークアップした場合の伸長指定
+   -------------------------------------------------------------------------- */
+.members-grid > li,
+.social-links > li {
+  display: flex;
+}
+
+.members-grid > li > .member-card,
+.social-links > li > .social-link-card {
+  flex: 1;
+}

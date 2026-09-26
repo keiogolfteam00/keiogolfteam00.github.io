@@ -1,0 +1,36 @@
+{
+  "name": "keiogolf",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate": "node scripts/validate-content.mjs",
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "lint": "eslint src --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\" index.html",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\" index.html",
+    "check": "npm run lint && npm run validate && npm run build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
+    "sharp": "^0.34.5",
+    "vite": "^6.0.5"
+  }
+}

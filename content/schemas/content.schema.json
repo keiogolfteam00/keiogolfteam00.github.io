@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site content",
+  "description": "サイト全体のテキスト・リンクをまとめたファイル。各ページに表示される文字や、ナビゲーション、フッターなどを編集できます。",
+  "type": "object",
+  "required": ["siteTitle", "nav", "home", "about", "team", "schedule", "contact", "footer"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "siteTitle": {
+      "type": "string",
+      "description": "ヘッダーに表示される部の名前。"
+    },
+    "nav": {
+      "type": "object",
+      "description": "ナビゲーション（上部メニュー）に表示されるリンク名。",
+      "required": ["home", "about", "team", "schedule", "prospective", "contact"],
+      "additionalProperties": false,
+      "properties": {
+        "home": { "type": "string" },
+        "about": { "type": "string" },
+        "team": { "type": "string" },
+        "schedule": { "type": "string" },
+        "prospective": { "type": "string" },
+        "contact": { "type": "string" }
+      }
+    },
+    "home": {
+      "type": "object",
+      "description": "ホームページに表示される文章。",
+      "required": ["heroTitle", "heroSubtitle", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "heroTitle": { "type": "string", "description": "ヒーロー画像内のメインタイトル（日本語）。" },
+        "heroSubtitle": { "type": "string", "description": "ヒーロー画像内のサブタイトル（英語）。" },
+        "description": { "type": "string", "description": "ホームページ本文の紹介文。" }
+      }
+    },
+    "about": {
+      "type": "object",
+      "description": "「部について」ページの内容。",
+      "required": ["title", "philosophy"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "description": "ページの見出し（例：理念）。" },
+        "philosophy": { "type": "string", "description": "理念の本文。" }
+      }
+    },
+    "team": {
+      "type": "object",
+      "description": "「部員紹介」ページのラベル類。部員一覧そのものは members.json を編集してください。",
+      "required": ["title", "menLabel", "womenLabel", "captainLabel", "viceCaptainLabel", "managerLabel", "loadingMessage"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "menLabel": { "type": "string", "description": "男子セクションのラベル。" },
+        "womenLabel": { "type": "string", "description": "女子セクションのラベル。" },
+        "captainLabel": { "type": "string" },
+        "viceCaptainLabel": { "type": "string" },
+        "managerLabel": { "type": "string" },
+        "loadingMessage": { "type": "string", "description": "データ読み込み中に表示される文言。" }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "description": "「試合日程・結果」ページのラベル類。年間スケジュールは schedule.json を編集してください。",
+      "required": ["title", "annualHeading"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "annualHeading": { "type": "string", "description": "年間予定の見出し。" }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "お問い合わせセクション。SNSリンクを編集できます。",
+      "required": ["title", "description", "socialLinks"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "socialLinks": {
+          "type": "array",
+          "description": "SNS等のリンク一覧。表示される順番に並べてください。",
+          "items": {
+            "type": "object",
+            "required": ["label", "handle", "url"],
+            "additionalProperties": false,
+            "properties": {
+              "label": { "type": "string", "description": "サービス名（例：Instagram）。" },
+              "handle": { "type": "string", "description": "アカウント名（例：@keio_golf_1922）。" },
+              "url": { "type": "string", "format": "uri", "pattern": "^https://", "description": "リンク先のURL（https:// から始まる完全なURL）。" }
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "description": "フッター。",
+      "required": ["copyright"],
+      "additionalProperties": false,
+      "properties": {
+        "copyright": { "type": "string", "description": "コピーライト表記。年が変わったら更新してください。" }
+      }
+    }
+  }
+}

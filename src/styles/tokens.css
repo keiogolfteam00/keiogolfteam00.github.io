@@ -1,0 +1,182 @@
+/* =============================================================================
+   Design Tokens — デジタル庁デザインシステム（DADS）基本デザイン準拠
+   https://design.digital.go.jp/dads/foundations/
+
+   値の出典: @digital-go-jp/design-tokens v2.0.1（MIT）
+   キーカラー（--color-key-*）はDADSがサービス固有のブランド色を差し込むための
+   スロットであり、本サイトでは慶應ネイビー #003366 を key-900 に据えた
+   ランプを割り当てている。
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------------
+     Primitive — Key（慶應ネイビー / hue 210）
+     key-900 = #003366（主要アクション色。白文字とのコントラスト比 12.6:1）
+     --------------------------------------------------------------------- */
+  --color-key-50: #f0f6fc;
+  --color-key-100: #dcebf9;
+  --color-key-200: #bad6f3;
+  --color-key-300: #88b8e7;
+  --color-key-400: #5899da;
+  --color-key-500: #277ace;
+  --color-key-600: #1666b6;
+  --color-key-700: #0a5299;
+  --color-key-800: #03417f;
+  --color-key-900: #003366;
+  --color-key-1000: #00284f;
+  --color-key-1100: #001d3b;
+  --color-key-1200: #00162b;
+
+  /* ---------------------------------------------------------------------
+     Primitive — DADS標準パレット（本サイトで参照する範囲）
+     --------------------------------------------------------------------- */
+  --color-primitive-yellow-50: #fbf5e0;
+  --color-primitive-yellow-200: #ffe380;
+  --color-primitive-yellow-300: #ffd43d;
+  --color-primitive-yellow-400: #ffc700;
+  --color-primitive-yellow-700: #b78f00;
+  --color-primitive-yellow-900: #927200;
+
+  --color-primitive-orange-800: #c74700;
+
+  --color-primitive-red-50: #fdeeee;
+  --color-primitive-red-800: #ec0000;
+  --color-primitive-red-900: #ce0000;
+
+  --color-primitive-green-50: #e6f5ec;
+  --color-primitive-green-600: #259d63;
+  --color-primitive-green-800: #197a4b;
+
+  --color-primitive-magenta-900: #8b008b;
+
+  --color-primitive-blue-900: #0017c1;
+  --color-primitive-blue-1000: #00118f;
+
+  /* ---------------------------------------------------------------------
+     Neutral
+     solid-gray-420 … 白背景に対して 3:1 を満たす最も明るいグレー（区切り線用）
+     solid-gray-536 … 白背景に対して 4.5:1 を満たす最も明るいグレー（補助文字用）
+     --------------------------------------------------------------------- */
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --color-neutral-solid-gray-50: #f2f2f2;
+  --color-neutral-solid-gray-100: #e6e6e6;
+  --color-neutral-solid-gray-200: #cccccc;
+  --color-neutral-solid-gray-300: #b3b3b3;
+  --color-neutral-solid-gray-400: #999999;
+  --color-neutral-solid-gray-420: #949494;
+  --color-neutral-solid-gray-500: #7f7f7f;
+  --color-neutral-solid-gray-536: #767676;
+  --color-neutral-solid-gray-600: #666666;
+  --color-neutral-solid-gray-700: #4d4d4d;
+  --color-neutral-solid-gray-800: #333333;
+  --color-neutral-solid-gray-900: #1a1a1a;
+
+  --color-neutral-opacity-gray-50: rgba(0, 0, 0, 0.05);
+  --color-neutral-opacity-gray-100: rgba(0, 0, 0, 0.1);
+  --color-neutral-opacity-gray-200: rgba(0, 0, 0, 0.2);
+  --color-neutral-opacity-gray-536: rgba(0, 0, 0, 0.54);
+
+  /* ---------------------------------------------------------------------
+     Semantic
+     --------------------------------------------------------------------- */
+  --color-semantic-success-1: var(--color-primitive-green-600);
+  --color-semantic-success-2: var(--color-primitive-green-800);
+  --color-semantic-error-1: var(--color-primitive-red-800);
+  --color-semantic-error-2: var(--color-primitive-red-900);
+  --color-semantic-warning-yellow-1: var(--color-primitive-yellow-700);
+  --color-semantic-warning-yellow-2: var(--color-primitive-yellow-900);
+
+  /* ---------------------------------------------------------------------
+     Typography — DADSは可読性・視認性の高いサンセリフを採用
+     --------------------------------------------------------------------- */
+  --font-family-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: 'Noto Sans Mono', monospace;
+
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-17: 1.0625rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-22: 1.375rem;
+  --font-size-24: 1.5rem;
+  --font-size-26: 1.625rem;
+  --font-size-28: 1.75rem;
+  --font-size-32: 2rem;
+  --font-size-36: 2.25rem;
+  --font-size-45: 2.8125rem;
+  --font-size-48: 3rem;
+  --font-size-57: 3.5625rem;
+  --font-size-64: 4rem;
+
+  --line-height-100: 1;
+  --line-height-120: 1.2;
+  --line-height-130: 1.3;
+  --line-height-140: 1.4;
+  --line-height-150: 1.5;
+  --line-height-160: 1.6;
+  --line-height-170: 1.7;
+  --line-height-175: 1.75;
+
+  /* ---------------------------------------------------------------------
+     Border radius
+     --------------------------------------------------------------------- */
+  --border-radius-4: 0.25rem;
+  --border-radius-6: 0.375rem;
+  --border-radius-8: 0.5rem;
+  --border-radius-12: 0.75rem;
+  --border-radius-16: 1rem;
+  --border-radius-24: 1.5rem;
+  --border-radius-32: 2rem;
+  --border-radius-full: 624.9375rem;
+
+  /* ---------------------------------------------------------------------
+     Elevation
+     --------------------------------------------------------------------- */
+  --elevation-1: 0 2px 8px 1px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  --elevation-2: 0 2px 12px 2px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-3: 0 4px 16px 3px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-4: 0 6px 20px 4px rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+
+  /* ---------------------------------------------------------------------
+     Spacing — 4px を基準単位とするスケール
+     --------------------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ---------------------------------------------------------------------
+     Layout
+     ブレークポイント desktop = 48em(768px) はDADSの定義に合わせている。
+     （メディアクエリでは変数を使えないため参考値として記載）
+     --------------------------------------------------------------------- */
+  --container-max-width: 75rem; /* 1200px */
+  --container-gutter: var(--space-4);
+  --container-gutter-desktop: var(--space-6);
+
+  /* 最小タップターゲット（DADS: 44px） */
+  --min-touch-target: 2.75rem;
+
+  /* ---------------------------------------------------------------------
+     Focus indicator（DADS共通仕様）
+     黒4pxのアウトライン + 2pxの黄色リングで、任意の背景色の上でも視認できる
+     --------------------------------------------------------------------- */
+  --focus-ring-color: var(--color-primitive-yellow-300);
+  --focus-outline-color: var(--color-neutral-black);
+  --focus-outline-width: 4px;
+  --focus-outline-offset: 2px;
+  --focus-ring-width: 2px;
+}

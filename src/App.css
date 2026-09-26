@@ -1,0 +1,13 @@
+/* =============================================================================
+   慶應義塾體育會ゴルフ部 公式サイト
+   スタイル基盤: デジタル庁デザインシステム（DADS）基本デザイン
+   https://design.digital.go.jp/dads/foundations/
+   ========================================================================== */
+@import './styles/tokens.css';
+@import './styles/typography.css';
+@import './styles/base.css';
+@import './styles/animations.css';
+@import './styles/layout.css';
+@import './styles/hero.css';
+@import './styles/components.css';
+@import './styles/footer.css';

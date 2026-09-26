@@ -1,0 +1,40 @@
+# キャッシュ設定 (Netlify / Cloudflare Pages 対応)
+# GitHub Pages では CDN (Cloudflare等) のキャッシュルール設定が別途必要
+
+# セキュリティヘッダー
+# GitHub Pages では効かないため、CDN (Cloudflare等) 側でも同等の設定を推奨
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Vite がコンテンツハッシュを付与するアセット → 長期キャッシュ + immutable
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# 画像: ハッシュなし (ファイル名が変わらないので immutable は付けない)
+/assets/*.webp
+  Cache-Control: public, max-age=31536000
+
+/assets/*.avif
+  Cache-Control: public, max-age=31536000
+
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000
+
+/assets/*.png
+  Cache-Control: public, max-age=31536000
+
+# HTML と manifest は毎回再検証
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.json
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate

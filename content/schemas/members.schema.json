@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Team members",
+  "description": "部員の名簿。学年が上がるとき、新入部員を追加するとき、卒業生を外すときに編集します。",
+  "type": "object",
+  "required": ["captains", "members"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "captains": {
+      "type": "object",
+      "description": "主将・副将・主務（4年生のみ表示されます）。",
+      "required": ["menCaptain", "menViceCaptain", "menManager", "womenCaptain", "womenViceCaptain", "womenManager"],
+      "additionalProperties": false,
+      "properties": {
+        "menCaptain": { "type": "string", "description": "男子主将のお名前。" },
+        "menViceCaptain": { "type": "string", "description": "男子副将のお名前。" },
+        "menManager": { "type": "string", "description": "男子主務のお名前。" },
+        "womenCaptain": { "type": "string", "description": "女子主将のお名前。" },
+        "womenViceCaptain": { "type": "string", "description": "女子副将のお名前。" },
+        "womenManager": { "type": "string", "description": "女子主務のお名前。" }
+      }
+    },
+    "members": {
+      "type": "array",
+      "description": "部員一覧。",
+      "items": {
+        "type": "object",
+        "required": ["name", "year", "gender"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "description": "氏名（例：山田 太郎）。" },
+          "year": {
+            "type": "string",
+            "description": "学年。「1年」「2年」「3年」「4年」のいずれか。",
+            "enum": ["1年", "2年", "3年", "4年"]
+          },
+          "gender": {
+            "type": "string",
+            "description": "「male」または「female」。",
+            "enum": ["male", "female"]
+          },
+          "photo": {
+            "type": "string",
+            "description": "顔写真のファイル名（例：yamada-taro.jpg）。public/assets/members/ フォルダに画像を置き、ファイル名だけを記入してください。省略可能。"
+          }
+        }
+      }
+    }
+  }
+}

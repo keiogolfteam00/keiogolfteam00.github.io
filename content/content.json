@@ -1,0 +1,63 @@
+{
+  "$schema": "./schemas/content.schema.json",
+  "siteTitle": "慶應義塾體育會ゴルフ部",
+  "nav": {
+    "home": "ホーム",
+    "about": "部について",
+    "team": "部員紹介",
+    "schedule": "年間スケジュール",
+    "prospective": "入部希望の方へ",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "heroTitle": "慶應義塾體育會ゴルフ部",
+    "heroSubtitle": "KEIO UNIVERSITY GOLF TEAM",
+    "description": "慶應義塾體育會ゴルフ部は、1922年に日本で最初の大学ゴルフ部として創部されました。私たちは、ゴルフの技術向上はもちろんのこと、ゴルフ場でのルールやマナーを重んじ、他大学の模範となることを目指しています。「学生ゴルフ界に旋風を巻き起こす」という先輩方の理念を受け継ぎ、チーム一丸となって関東大学対抗戦Aブロックへの復帰を目指し、日々練習に励んでいます。"
+  },
+  "about": {
+    "title": "理念",
+    "philosophy": "我がゴルフ部が目指すのは、関東大学対抗戦Aブロックへの復活です。近年は他大学のレベルも上がってきており、推薦選手を採用していない我が部が勝つためにはどうすれば良いかを考え、チーム一丸となって努力しています。また、国内大学最初のゴルフ部として、実力のみならず、ゴルフ場でのルールやマナーを重んじ、他大学の模範となるよう心掛けています。先輩方が掲げた「学生ゴルフ界に旋風を巻き起こす」という理念のもと、目標を達成すべく、日々精進してまいります。"
+  },
+  "team": {
+    "title": "部員紹介",
+    "menLabel": "男子",
+    "womenLabel": "女子",
+    "captainLabel": "主将",
+    "viceCaptainLabel": "副将",
+    "managerLabel": "主務",
+    "loadingMessage": "読み込み中..."
+  },
+  "schedule": {
+    "title": "年間スケジュール",
+    "annualHeading": "年間予定"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "ご質問やご入部に関するお問い合わせは、InstagramのDMまでご連絡ください。",
+    "socialLinks": [
+      {
+        "label": "Instagram（男子部）",
+        "handle": "@keio_golf_1922",
+        "url": "https://www.instagram.com/keio_golf_1922"
+      },
+      {
+        "label": "Instagram（女子部）",
+        "handle": "@keiogolf_72",
+        "url": "https://www.instagram.com/keiogolf_72"
+      },
+      {
+        "label": "X",
+        "handle": "@KeioMensGolf",
+        "url": "https://x.com/KeioMensGolf"
+      },
+      {
+        "label": "Facebook",
+        "handle": "keiogolfteam2013",
+        "url": "https://www.facebook.com/keiogolfteam2013"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 慶應義塾體育會ゴルフ部"
+  }
+}

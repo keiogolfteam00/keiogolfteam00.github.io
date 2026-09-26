@@ -1,0 +1,38 @@
+/* =============================================================================
+   Animations
+   DADS「アクセシビリティ」の考え方に沿って動きは控えめにし、
+   prefers-reduced-motion では完全に無効化する。
+
+   既定は「表示」。画面外の要素にだけ JS が data-reveal="pending" を付け、
+   スクロールで解除する。JSが動作しない環境でもコンテンツは読める。
+   ========================================================================== */
+
+.fade-up {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.fade-up[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-up[data-reveal='pending'] {
+    opacity: 1;
+    transform: none;
+  }
+}

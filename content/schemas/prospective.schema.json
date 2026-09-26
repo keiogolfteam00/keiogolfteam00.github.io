@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prospective members content",
+  "description": "「入部希望の方へ」ページの全文を管理するファイル。新歓のたびに、年度・日付・LINE情報・タイムラインを更新します。",
+  "type": "object",
+  "required": ["pageTitle", "intro", "orientationSession", "line", "requiredFields", "mandatoryNote", "formNote", "timelineHeading", "timeline", "closing"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "pageTitle": {
+      "type": "string",
+      "description": "ページの見出し（例：2026年度 新歓のお知らせ）。"
+    },
+    "intro": {
+      "type": "string",
+      "description": "ページ冒頭の挨拶文。"
+    },
+    "orientationSession": {
+      "type": "object",
+      "description": "入部説明会の日時・形式。",
+      "required": ["date", "startTime", "endTime", "format"],
+      "additionalProperties": false,
+      "properties": {
+        "date": { "type": "string", "description": "例：2026年4月4日土曜日" },
+        "startTime": { "type": "string", "description": "例：18:00" },
+        "endTime": { "type": "string", "description": "例：19:00" },
+        "format": { "type": "string", "description": "例：オンライン" }
+      }
+    },
+    "line": {
+      "type": "object",
+      "description": "LINE公式アカウント情報。",
+      "required": ["accountName", "id", "deadline"],
+      "additionalProperties": false,
+      "properties": {
+        "accountName": { "type": "string", "description": "例：慶應義塾體育會ゴルフ部男子" },
+        "id": { "type": "string", "description": "例：@882fmofb" },
+        "deadline": { "type": "string", "description": "情報送信期限。例：4月3日金曜日" }
+      }
+    },
+    "requiredFields": {
+      "type": "array",
+      "description": "LINEで送信していただく項目の一覧。",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "mandatoryNote": {
+      "type": "string",
+      "description": "「説明会への参加が必須」など、強調したい注意事項。"
+    },
+    "formNote": {
+      "type": "string",
+      "description": "Zoom URL の案内方法など、補足のメッセージ。"
+    },
+    "timelineHeading": {
+      "type": "string",
+      "description": "入部までの流れの見出し。"
+    },
+    "timeline": {
+      "type": "array",
+      "description": "入部までのスケジュール。表示される順番に並べてください。",
+      "items": {
+        "type": "object",
+        "required": ["label", "date"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string", "description": "ステップ名（例：入部説明会）。" },
+          "date": { "type": "string", "description": "日付（例：2026年4月4日土曜日）。" },
+          "time": { "type": "string", "description": "（任意）時間。例：18:00〜19:00" },
+          "note": { "type": "string", "description": "（任意）補足メッセージ。" }
+        }
+      }
+    },
+    "closing": {
+      "type": "string",
+      "description": "ページ末尾の問い合わせ案内。"
+    },
+    "closed": {
+      "type": "boolean",
+      "description": "true のとき募集締切画面を表示する。"
+    },
+    "closedMessage": {
+      "type": "string",
+      "description": "締切時に表示するメインメッセージ。"
+    },
+    "closedNote": {
+      "type": "string",
+      "description": "締切時に表示する補足メッセージ（SNS誘導など）。"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+/* =============================================================================
+   Hero — 写真は維持しつつ、タイポグラフィとコントラストをDADSに合わせる
+   ========================================================================== */
+
+.hero {
+  align-items: center;
+  color: var(--color-neutral-white);
+  display: flex;
+  min-height: clamp(18rem, 46vh, 26rem);
+  overflow: hidden;
+  padding-block: var(--space-12);
+  position: relative;
+}
+
+@media (min-width: 48em) {
+  .hero {
+    min-height: clamp(22rem, 52vh, 32rem);
+    padding-block: var(--space-16);
+  }
+}
+
+.hero-bg {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+/* 写真の明暗によらず白文字が 4.5:1 以上を確保できるよう、
+   キーカラー系の濃い色で全面をオーバーレイする。 */
+.hero::after {
+  background: linear-gradient(to bottom, rgba(0, 22, 43, 0.72) 0%, rgba(0, 22, 43, 0.82) 100%);
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  color: var(--color-neutral-white);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.12em;
+  line-height: var(--line-height-100);
+  margin: 0 0 var(--space-4);
+}
+
+.hero-title {
+  color: var(--color-neutral-white);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.01em;
+  line-height: var(--line-height-140);
+  margin: 0;
+}
+
+/* 狭い端末で部名が折り返さないよう、1段階下のサイズに落とす */
+@media (max-width: 23.4375em) {
+  .hero-title {
+    font-size: var(--font-size-28);
+  }
+}
+
+@media (min-width: 48em) {
+  .hero-title {
+    font-size: var(--font-size-48);
+    letter-spacing: 0;
+  }
+}
+
+.hero-subtitle {
+  color: var(--color-neutral-white);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0.08em;
+  line-height: var(--line-height-150);
+  margin: var(--space-4) 0 0;
+}
+
+@media (min-width: 48em) {
+  .hero-subtitle {
+    font-size: var(--font-size-18);
+  }
+}

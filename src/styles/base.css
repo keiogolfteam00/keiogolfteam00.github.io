@@ -1,0 +1,251 @@
+/* =============================================================================
+   Base — リセット、基本タイポグラフィ、フォーカス、リンク、レイアウト土台
+   DADS 基本デザインに準拠
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-neutral-white);
+  color: var(--color-neutral-solid-gray-900);
+  font-family: var(--font-family-sans);
+  /* std-16N-170（モバイル基準） */
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-170);
+  margin: 0;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 48em) {
+  body {
+    /* std-17N-170（デスクトップ基準） */
+    font-size: var(--font-size-17);
+  }
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+   フォーカスインジケーター（DADS共通仕様）
+   黒4pxのアウトラインと2pxの黄色リングを併用し、どんな背景色の上でも
+   フォーカス位置が判別できるようにする。
+   -------------------------------------------------------------------------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  border-radius: var(--border-radius-4);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* マウス操作時にブラウザ既定のアウトラインを出さない */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 51, 102, 0.16);
+}
+
+/* -----------------------------------------------------------------------------
+   リンク（DADS「リンク」仕様）
+   既定色はキーカラー系のブルー、下線は常時表示、オフセット3px。
+   訪問済みはマゼンタ、押下中はオレンジ。
+   -------------------------------------------------------------------------- */
+.dads-link {
+  color: var(--color-key-800);
+  text-decoration: underline;
+  text-underline-offset: 0.1875rem;
+}
+
+.dads-link:visited {
+  color: var(--color-primitive-magenta-900);
+}
+
+.dads-link:hover {
+  color: var(--color-key-900);
+  text-decoration-thickness: 0.1875rem;
+}
+
+.dads-link:active {
+  color: var(--color-primitive-orange-800);
+  text-decoration-thickness: 1px;
+}
+
+.dads-link:focus-visible {
+  background-color: var(--focus-ring-color);
+  color: var(--color-key-900);
+}
+
+/* 新規タブで開くリンクに添えるアイコン */
+.dads-link-external-icon {
+  display: inline;
+  margin-bottom: 0.1875rem;
+  margin-left: 0.1875rem;
+  vertical-align: middle;
+}
+
+/* -----------------------------------------------------------------------------
+   本文へスキップ
+   -------------------------------------------------------------------------- */
+.skip-link {
+  background-color: var(--color-key-900);
+  border-radius: 0 0 var(--border-radius-8) 0;
+  color: var(--color-neutral-white);
+  font-weight: var(--font-weight-700);
+  left: 0;
+  padding: var(--space-3) var(--space-4);
+  position: fixed;
+  text-decoration: underline;
+  top: 0;
+  transform: translateY(-110%);
+  z-index: 1100;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* -----------------------------------------------------------------------------
+   レイアウト土台
+   -------------------------------------------------------------------------- */
+.container {
+  margin-inline: auto;
+  max-width: var(--container-max-width);
+  padding-inline: max(var(--container-gutter), env(safe-area-inset-left));
+}
+
+@media (min-width: 48em) {
+  .container {
+    padding-inline: var(--container-gutter-desktop);
+  }
+}
+
+.page-content {
+  padding-block: var(--space-6) var(--space-16);
+}
+
+@media (min-width: 48em) {
+  .page-content {
+    padding-block: var(--space-8) var(--space-24);
+  }
+}
+
+.page-section + .page-section {
+  margin-top: var(--space-16);
+}
+
+@media (min-width: 48em) {
+  .page-section + .page-section {
+    margin-top: var(--space-20);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   見出し
+   DADSでは見出しは左揃えを基本とし、装飾ではなく階層で構造を示す。
+   -------------------------------------------------------------------------- */
+.page-title {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.01em;
+  line-height: var(--line-height-150);
+  margin: 0;
+}
+
+@media (min-width: 48em) {
+  .page-title {
+    font-size: var(--font-size-45);
+    letter-spacing: 0;
+    line-height: var(--line-height-140);
+  }
+}
+
+.page-header {
+  border-bottom: 1px solid var(--color-neutral-solid-gray-420);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-5);
+}
+
+.page-header-lead {
+  color: var(--color-neutral-solid-gray-700);
+  margin: var(--space-3) 0 0;
+}
+
+.section-title {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-150);
+  margin: 0 0 var(--space-6);
+  padding-left: var(--space-3);
+  border-left: 0.25rem solid var(--color-key-900);
+}
+
+@media (min-width: 48em) {
+  .section-title {
+    font-size: var(--font-size-32);
+    letter-spacing: 0.01em;
+  }
+}
+
+.subsection-title {
+  color: var(--color-neutral-solid-gray-900);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-150);
+  margin: 0 0 var(--space-4);
+}
+
+@media (min-width: 48em) {
+  .subsection-title {
+    font-size: var(--font-size-24);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   区切り線（DADS「Divider」）
+   -------------------------------------------------------------------------- */
+.dads-divider {
+  background-color: var(--color-neutral-solid-gray-420);
+  border: none;
+  height: 1px;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   ユーティリティ
+   -------------------------------------------------------------------------- */
+.text-muted {
+  color: var(--color-neutral-solid-gray-536);
+}
+
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

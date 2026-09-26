@@ -1,0 +1,17 @@
+{
+  "$schema": "./schemas/schedule.schema.json",
+  "schedule": [
+    { "month": "4月", "events": [] },
+    { "month": "5月", "events": ["関東大学春季リーグ戦"] },
+    { "month": "6月", "events": ["関東学生ゴルフ選手権予選", "早慶戦", "八大学対抗戦"] },
+    { "month": "7月", "events": [] },
+    { "month": "8月", "events": ["関東学生ゴルフ選手権", "夏季全員合宿", "関東大学秋季リーグ戦"] },
+    { "month": "9月", "events": ["常陸宮杯予選"] },
+    { "month": "10月", "events": ["文部科学大臣杯予選"] },
+    { "month": "11月", "events": ["三田祭合宿", "会長杯争奪関東学生ゴルフ選手権"] },
+    { "month": "12月", "events": [] },
+    { "month": "1月", "events": [] },
+    { "month": "2月", "events": ["冬季タイ合宿"] },
+    { "month": "3月", "events": ["春季全員合宿"] }
+  ]
+}
