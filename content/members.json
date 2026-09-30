@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/members.schema.json",
   "captains": {
-    "menCaptain": "伊藤優希",
+    "menCaptain": "片岡謙",
     "menViceCaptain": "横井太郎",
     "menManager": "相山武仁",
     "womenCaptain": "林真衣",
