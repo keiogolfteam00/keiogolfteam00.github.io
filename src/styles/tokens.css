@@ -90,8 +90,9 @@
   /* ---------------------------------------------------------------------
      Typography — DADSは可読性・視認性の高いサンセリフを採用
      --------------------------------------------------------------------- */
-  --font-family-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-family-mono: 'Noto Sans Mono', monospace;
+  --font-family-sans:
+    "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: "Noto Sans Mono", monospace;
 
   --font-weight-400: 400;
   --font-weight-700: 700;
@@ -136,10 +137,14 @@
   /* ---------------------------------------------------------------------
      Elevation
      --------------------------------------------------------------------- */
-  --elevation-1: 0 2px 8px 1px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
-  --elevation-2: 0 2px 12px 2px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
-  --elevation-3: 0 4px 16px 3px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
-  --elevation-4: 0 6px 20px 4px rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-1:
+    0 2px 8px 1px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  --elevation-2:
+    0 2px 12px 2px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-3:
+    0 4px 16px 3px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-4:
+    0 6px 20px 4px rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 
   /* ---------------------------------------------------------------------
      Spacing — 4px を基準単位とするスケール
@@ -179,4 +184,12 @@
   --focus-outline-width: 4px;
   --focus-outline-offset: 2px;
   --focus-ring-width: 2px;
+}
+
+/* 部員紹介ページの編集デザイン用トークン */
+:root {
+  --color-roster-paper: #f7f5f0;
+  --color-roster-red: #a51c36;
+  --font-family-editorial: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-size-roster-display: clamp(2.5rem, 6.3vw, 5.75rem);
 }
