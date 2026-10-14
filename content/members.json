@@ -27,7 +27,7 @@
     { "name": "石井 里佳", "year": "3年", "gender": "female" },
     { "name": "土志田 理佐", "year": "3年", "gender": "female" },
     { "name": "奥山 大地", "year": "2年", "gender": "male" },
-    { "name": "小泉 健斗", "year": "2年", "gender": "male"},
+    { "name": "小泉 健斗", "year": "2年", "gender": "male", "photo": "koizumi-kento.png"},
     { "name": "小林 永征", "year": "2年", "gender": "male" },
     { "name": "崔 新知", "year": "2年", "gender": "male" },
     { "name": "西丸 雄之助", "year": "2年", "gender": "male" },
